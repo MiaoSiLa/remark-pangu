@@ -41,7 +41,7 @@ function format(value) {
 }
 
 function visitor(node) {
-  if (is('text', node) || is('inlineCode', node)) {
+  if (is('text', node) || is('inlineCode', node) || is('code', node)) {
     node.value = format(node.value)
   }
 
