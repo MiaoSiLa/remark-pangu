@@ -44,6 +44,9 @@ const fixSymbol = /([\u201c-\u201d\u2e80-\u2eff\u2f00-\u2fdf\u3040-\u309f\u30a0-
 const cjkANS = /([\u201c-\u201d\u2e80-\u2eff\u2f00-\u2fdf\u3040-\u309f\u30a0-\u30ff\u3100-\u312f\u3200-\u32ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff])([A-Za-z0-9`\$%\^&\*\-=\+\\\|/@\u00a1-\u00ff\u2022\u2027\u2150-\u218f])/g;
 const ansCJK = /([A-Za-z0-9`~\$%\^&\*\-=\+\\\|/!;:,\.\?\u00a1-\u00ff\u2022\u2026\u2027\u2150-\u218f])([\u201c-\u201d\u2e80-\u2eff\u2f00-\u2fdf\u3040-\u309f\u30a0-\u30ff\u3100-\u312f\u3200-\u32ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff])/g;
 
+const fixMissEvan1 = /(猫耳) +(FM) */g;
+const fixMissEvan2 = /([\^\n ]M) +(站)/g;
+
 class Pangu {
 
   spacing(text) {
@@ -74,6 +77,10 @@ class Pangu {
 
     newText = newText.replace(cjkANS, '$1 $2');
     newText = newText.replace(ansCJK, '$1 $2');
+
+    // fix brand name
+    newText = newText.replace(fixMissEvan1, '$1$2');
+    newText = newText.replace(fixMissEvan2, '$1$2');
 
     return newText;
   }
