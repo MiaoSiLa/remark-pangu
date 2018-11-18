@@ -2406,10 +2406,6 @@ p-locate@^2.0.0:
   dependencies:
     p-limit "^1.1.0"
 
-pangu@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/pangu/-/pangu-3.3.0.tgz#e8ca9711b6ae49b609441528406030dae2e32e68"
-
 parse-entities@^1.0.2:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/parse-entities/-/parse-entities-1.1.1.tgz#8112d88471319f27abae4d64964b122fe4e1b890"

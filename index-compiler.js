@@ -1,4 +1,4 @@
-const pangu = require('pangu')
+const pangu = require('./pangu')
 
 // List of Markdown AST: <https://github.com/syntax-tree/mdast>
 // AST Explorer: <https://astexplorer.net/#/gist/7a794a8fc43b2e75e27024c85fb77aad/0934495eb735dffdf739dc7943f7848940070f8e>
