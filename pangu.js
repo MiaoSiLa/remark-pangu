@@ -46,7 +46,7 @@ const ansCJK = /([A-Za-z0-9`~\$%\^&\*\-=\+\\\|/!;:,\.\?\u00a1-\u00ff\u2022\u2026
 const fixCJKQuote = /([\u201c]+)(\s*)(.+?)(\s*)([\u201d]+)/g;
 
 const fixMissEvan1 = /(猫耳) +(FM) */g;
-const fixMissEvan2 = /([\^\n ]M) +(站)/g;
+const fixMissEvan2 = /([\^\n]?) *?(M) +(站)/g;
 
 class Pangu {
 
@@ -82,7 +82,7 @@ class Pangu {
 
     // fix brand name
     newText = newText.replace(fixMissEvan1, '$1$2');
-    newText = newText.replace(fixMissEvan2, '$1$2');
+    newText = newText.replace(fixMissEvan2, '$1$2$3');
 
     return newText;
   }
